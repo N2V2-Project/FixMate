@@ -1,0 +1,1 @@
+Adding fully responsive frontend
