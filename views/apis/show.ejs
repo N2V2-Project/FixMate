@@ -17,9 +17,7 @@
         <li class="list-group-item"><strong>Branch:</strong> <%= issue.branch %></li>
         <li class="list-group-item"><strong>Section:</strong> <%= issue.section %></li>
         <li class="list-group-item"><strong>Issue:</strong> <%= issue.issue %></li>
-        <% if (issue.issueDescription && issue.issueDescription.trim() !== "") { %>
-          <li class="list-group-item"><strong>Description:</strong> <%= issue.issueDescription %></li>
-        <% } %>
+      
         <li class="list-group-item">
           <strong>Status:</strong> 
           <span class="badge bg-<%= issue.status === 'Resolved' ? 'success' : issue.status === 'In Progress' ? 'primary' : 'warning' %>">

@@ -28,11 +28,7 @@ const issueSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  issueDescription:{
-    type: String,
-    required: false,
-    trim: true
-  },
+ 
   photo: {
      type:String,
         default:"Default Link",

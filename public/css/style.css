@@ -140,6 +140,9 @@ body{
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='lightgray' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+
+/*issue*/
+/*
 .issue-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
@@ -151,7 +154,7 @@ body{
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Fix for card images */
+/* Fix for card images 
 .issue-card img {
   object-fit: cover;
   height: 15rem;
@@ -159,26 +162,29 @@ body{
   border-top-right-radius: 10px;
 }
 
-/* Card body styling */
+/* Card body styling 
 .issue-card .card-body {
   padding: 1rem;
   background-color: #f9f9f9;
 }
 
-/* Footer badge */
+/* Footer badge 
 .card-footer {
   background-color: #ffffff;
   border-top: 1px solid #ddd;
 }
 
-/* Badge color for status */
+/* Badge color for status 
 .badge.bg-warning {
   background-color: #ffc107 !important;
 }
 
 .badge.bg-success {
   background-color: #28a745 !important;
-}
+}*/
+
+
+
 
 /* Show page container */
 .container {
