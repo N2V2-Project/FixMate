@@ -40,26 +40,14 @@ mongoose
   .catch((err) => console.error("DB connection error:", err));
 
 // Multer config
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "uploads/"),
-  filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    cb(null, `${Date.now()}-${file.originalname}`);
-  },
-});
-const upload = multer({
-  storage,
-  limits: { fileSize: 5 * 1024 * 1024 },
-  fileFilter: (req, file, cb) => {
-    const allowed = /jpeg|jpg|png|gif/;
-    const isValid =
-      allowed.test(path.extname(file.originalname).toLowerCase()) &&
-      allowed.test(file.mimetype);
-    cb(isValid ? null : new Error("Only images are allowed"), isValid);
-  },
-});
+const { storage } = require("./cloudConfig");
+const upload = multer({ storage });
 
 // Routes
+app.get('/', (req, res) => {
+    res.render('apis/index.ejs');
+});
+
 
 app.get(
   "/issues",
@@ -78,18 +66,45 @@ app.post(
   upload.single("photo"),
   wrapAsync(async (req, res) => {
     const issueData = req.body.issue;
+    console.log(issueData);
+    
     if (!issueData) {
-      throw new ExpressError(400, "Valid data");
+      throw new ExpressError(400, "No form data received.");
     }
-    if (req.file) {
-      issueData.photo = `/uploads/${req.file.filename}`;
+
+    // Ensure file uploaded
+    if (!req.file || !req.file.path) {
+      throw new ExpressError(400, "Image upload failed. Please check file type and Cloudinary config.");
     }
+
+    issueData.photo = req.file.path;
     issueData.status = "Pending";
+
     const newIssue = new Issue(issueData);
     await newIssue.save();
+
     res.redirect("/issues");
   })
 );
+
+
+// app.post(
+//   "/issues",
+//   upload.single("photo"),
+//   wrapAsync(async (req, res) => {
+//     const issueData = req.body.issue;
+//     if (!issueData) {
+//       throw new ExpressError(400, "Valid data");
+//     }
+//     if (req.file) {
+//       issueData.photo = req.file.path;
+//     }
+//     issueData.status = "Pending";
+//     const newIssue = new Issue(issueData);
+//     await newIssue.save();
+//     res.redirect("/issues");
+//   })
+// );
 
 app.get(
   "/issues/pending",

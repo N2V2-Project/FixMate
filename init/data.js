@@ -1,57 +1,58 @@
-module.exports.data = [
+module.exports.data =  [
+  {
+    name: "Gayle",
+    branch: "Computer Science",
+    section: "A",
+    usn: "U25UV22T043099",
+    email: "nithish.kumar@example.com",
+    title: "Broken Light in Classroom",
+    issue: "The light in Room 305 flickers and disturbs the class.",
+    photo: "https://res.cloudinary.com/demo/image/upload/v1621522812/light.jpg",
+    status: "Pending"
+  },
   {
     name: "Akash R",
+    branch: "Electronics",
+    section: "B",
     usn: "U25UV22T043001",
-    branch: "CSE",
-    section: "A",
     email: "akash.r@example.com",
     title: "Damaged Bench",
-    issue: "Broken bench near Block C",
-    photo: "/assets/College_img.jpg",
-    status: "Pending"
-  },
-  {
-    name: "Divya M",
-    usn: "U25UV22T043012",
-    branch: "ECE",
-    section: "B",
-    email: "divya.m@example.com",
-    title: "WiFi Issue",
-    issue: "WiFi not working in Hostel Block B",
-    photo: "https://res.cloudinary.com/demo/image/upload/v1691234570/wifi.jpg",
-    status: "Pending"
-  },
-  {
-    name: "Rahul S",
-    usn: "U25UV22T043034",
-    branch: "ME",
-    section: "C",
-    email: "rahul.s@example.com",
-    title: "Water Leakage",
-    issue: "Water leakage near the canteen washroom",
-    photo: "https://res.cloudinary.com/demo/image/upload/v1691234585/leak.jpg",
+    issue: "A bench in the ground floor corridor is cracked and unsafe.",
+    photo: "https://res.cloudinary.com/demo/image/upload/v1621522812/bench.jpg",
     status: "In Progress"
   },
   {
-    name: "Sneha K",
+    name: "Divya M",
+    branch: "Mechanical",
+    section: "C",
     usn: "U25UV22T043045",
-    branch: "ISE",
-    section: "A",
-    email: "sneha.k@example.com",
-    title: "Lighting Problem",
-    issue: "Lights not working in 3rd-floor corridor",
-    photo: "https://res.cloudinary.com/demo/image/upload/v1691234599/lights.jpg",
+    email: "divya.mech@example.com",
+    title: "Leaking Tap",
+    issue: "The tap in the girls' washroom on 2nd floor is leaking continuously.",
+    photo: "https://res.cloudinary.com/demo/image/upload/v1621522812/tap.jpg",
     status: "Resolved"
   },
   {
-    name: "Vikram N",
-    usn: "U25UV22T043057",
-    branch: "EEE",
-    section: "D",
-    email: "vikram.n@example.com",
-    title: "Garbage Overflow",
-    issue: "Garbage dump overflowing near parking lot",
-    photo: "https://res.cloudinary.com/demo/image/upload/v1691234611/garbage.jpg",
+    name: "Rahul S",
+    branch: "Civil",
+    section: "A",
+    usn: "U25UV22T043055",
+    email: "rahul.civil@example.com",
+    title: "Damaged Projector",
+    issue: "The projector in Room 108 is not turning on.",
+    photo: "https://res.cloudinary.com/demo/image/upload/v1621522812/projector.jpg",
+    status: "Pending"
+  },
+  {
+    name: "Sneha L",
+    branch: "Information Science",
+    section: "B",
+    usn: "U25UV22T043023",
+    email: "sneha.is@example.com",
+    title: "Wi-Fi Not Working",
+    issue: "Wi-Fi in the library is not working for the past two days.",
+    photo: "https://res.cloudinary.com/demo/image/upload/v1621522812/wifi.jpg",
     status: "Pending"
   }
 ];
+

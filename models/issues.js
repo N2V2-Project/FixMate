@@ -47,6 +47,7 @@ const issueSchema = new mongoose.Schema({
 
   photo: {
     type: String,
+   
     default: "Default Link",
     set: (v) => (v === "" ? "default link" : v),
   },
