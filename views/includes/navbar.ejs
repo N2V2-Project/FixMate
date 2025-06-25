@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary custom-navbar">
+  <div class="container-fluid">
+    <!-- Brand on left -->
+    <a class="navbar-brand" href="/">FixMate</a>
+
+    <!-- Hamburger for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/virtualtour/index.html" target="_blank">Virtual Tour</a>
+        <a class="nav-link" href="/issues/new">Issue-Form</a>
+        <a class="nav-link" href="/issues/pending">Pending</a>
+        <a class="nav-link" href="/issues/resolved">Resolved</a>
+
+        <% if (currentUser) { %>
+          <a class="nav-link text-danger fw-bold" href="/logout">Logout</a>
+        <% } else { %>
+          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link" href="/signup">Sign Up</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

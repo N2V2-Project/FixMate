@@ -1,0 +1,39 @@
+<% layout("layouts/boilerplate") %>
+<div class="container my-5">
+  <h2 class="text-center mb-4">Pending Issues</h2>
+
+  <div class="row g-4">
+    <% if (allIssues.length === 0) { %>
+    <div class="col-12">
+      <p class="text-center text-muted">No issues Resolved.</p>
+    </div>
+    <% } %> <% for (let issue of allIssues) { %>
+    <div class="col-lg-4 col-md-6 col-sm-12 issue-card">
+      <a href="/issues/<%= issue._id %>" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="<%= issue.photo || 'https://via.placeholder.com/400x250?text=No+Image' %>"
+            class="card-img-top"
+            alt="Issue Image"
+          />
+
+          <div class="card-body">
+            <h5 class="card-title"><%= issue.name %></h5>
+            <p class="card-text"><strong>Issue:</strong> <%= issue.issue %></p>
+          </div>
+
+          <div class="card-footer text-end">
+            <% let badgeClass; if (issue.status === 'Pending') badgeClass =
+            'danger'; else if (issue.status === 'In Progress') badgeClass =
+            'warning'; else if (issue.status === 'Resolved') badgeClass =
+            'success'; %>
+            <span class="badge bg-<%= badgeClass %> text-uppercase">
+              <%= issue.status %>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <% } %>
+  </div>
+</div>

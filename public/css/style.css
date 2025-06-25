@@ -1,0 +1,161 @@
+
+
+
+  /*Backend*/
+body{
+    font-family: "Plus Jakarta Sans", serif !important;  
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; /*ai*/
+}
+
+
+  .navbar-brand{
+    font-weight: 600;
+  }
+
+  .nav-link{
+    color: black !important;
+    font-size: 1rem;
+  }
+
+  .custom-navbar {
+  background-color: #1E1E1E !important; /* Or your chosen color */
+
+}
+
+.custom-navbar .navbar-brand {
+  color: #FF5722 !important;   /* FixMate brand in bright orange */
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.custom-navbar .nav-link {
+  color: #E0E0E0 !important;   /* Light gray for nav items */
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #FFA07A !important;   /* Light orange on hover */
+}
+
+.custom-navbar .nav-link.active {
+  color: #FFFFFF !important;   /* White for active link */
+}
+
+.navbar-toggler {
+  border-color: lightgray; /* optional: change border */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='lightgray' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+/*issue*/
+/*
+.issue-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.issue-card:hover {
+  background-color: white;
+  opacity: 0.9;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix for card images 
+.issue-card img {
+  object-fit: cover;
+  height: 15rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Card body styling 
+.issue-card .card-body {
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+/* Footer badge 
+.card-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+/* Badge color for status 
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+.badge.bg-success {
+  background-color: #28a745 !important;
+}*/
+
+
+
+
+/* Show page container */
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Card styling */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* List styling inside the card */
+.list-group-item {
+  font-size: 1rem;
+  padding: 12px 20px;
+  background-color: #f9f9f9;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Last list item should have no border */
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+/* Status badge customization */
+.badge {
+  font-size: 0.95rem;
+  padding: 6px 12px;
+  text-transform: capitalize;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}

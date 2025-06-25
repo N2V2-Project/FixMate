@@ -1,0 +1,30 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container mt-4 d-flex justify-content-center">
+  <div class="card shadow-lg" style="width: 35rem;">
+    <img
+      class="card-img-top show-img"
+      src="<%= issue.photo || 'https://via.placeholder.com/400x250?text=No+Image' %>"
+      alt="Issue Image"
+      style="height: 18rem; object-fit: cover;"
+    />
+
+    <div class="card-body">
+      <h4 class="card-title mb-3">Issue Details</h4>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Name:</strong> <%= issue.name %></li>
+        <li class="list-group-item"><strong>USN:</strong> <%= issue.usn %></li>
+        <li class="list-group-item"><strong>Branch:</strong> <%= issue.branch %></li>
+        <li class="list-group-item"><strong>Section:</strong> <%= issue.section %></li>
+        <li class="list-group-item"><strong>Issue:</strong> <%= issue.issue %></li>
+      
+        <li class="list-group-item">
+          <strong>Status:</strong> 
+          <span class="badge bg-<%= issue.status === 'Resolved' ? 'success' : issue.status === 'In Progress' ? 'primary' : 'warning' %>">
+            <%= issue.status %>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

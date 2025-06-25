@@ -1,0 +1,136 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="row mt-4">
+  <div class="col-md-6 offset-md-3">
+    <h3 class="mb-4">Report New Issue</h3>
+
+    <form
+      method="POST"
+      action="/issues"
+      enctype="multipart/form-data"
+      class="needs-validation"
+      novalidate
+    >
+      <!-- Name -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input
+          type="text"
+          name="issue[name]"
+          class="form-control"
+          placeholder="Enter your full name"
+          required
+        />
+        <div class="invalid-feedback">Please enter your name.</div>
+      </div>
+
+      <!-- USN -->
+      <div class="mb-3">
+        <label for="usn" class="form-label">USN</label>
+        <input
+          type="text"
+          name="issue[usn]"
+          class="form-control"
+          placeholder="U25UV22T0430XX"
+          required
+        />
+        <div class="invalid-feedback">Please enter your USN.</div>
+      </div>
+
+      <!-- Branch and Section -->
+      <div class="row">
+        <div class="mb-3 col-md-8">
+          <label for="branch" class="form-label">Branch</label>
+          <input
+            type="text"
+            name="issue[branch]"
+            class="form-control"
+            placeholder="CSE / ECE / ME etc."
+            required
+          />
+          <div class="invalid-feedback">Please enter your branch.</div>
+        </div>
+        <div class="mb-3 col-md-4">
+          <label for="section" class="form-label">Section</label>
+          <input
+            type="text"
+            name="issue[section]"
+            class="form-control"
+            placeholder="A / B / C"
+            required
+          />
+          <div class="invalid-feedback">Please enter your section.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input
+          type="email"
+          name="issue[email]"
+          class="form-control"
+          placeholder="example@student.edu"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+
+      <!-- Title -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="issue[title]"
+          class="form-control"
+          placeholder="Short title for the issue"
+          required
+        />
+        <div class="invalid-feedback">Please enter an issue title.</div>
+      </div>
+
+      <!-- Issue -->
+      <div class="mb-3">
+        <label for="issue" class="form-label">Issue Summary</label>
+        <input
+          type="text"
+          name="issue[issue]"
+          class="form-control"
+          placeholder="Eg: Broken bench near Block C"
+          required
+        />
+        <div class="invalid-feedback">Please describe the issue.</div>
+      </div>
+
+      <!-- Photo -->
+      <div class="mb-3">
+        <label for="photo" class="form-label">Photo Link</label>
+        <input type="file" name="photo" class="form-control"   required/>
+         <div class="invalid-feedback">Please Upload the Image.</div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary mt-2">Report Issue</button>
+    </form>
+  </div>
+</div>
+
+<!-- Bootstrap validation script -->
+<script>
+  (function () {
+    "use strict";
+    const forms = document.querySelectorAll(".needs-validation");
+    Array.from(forms).forEach((form) => {
+      form.addEventListener(
+        "submit",
+        (event) => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+</script>
